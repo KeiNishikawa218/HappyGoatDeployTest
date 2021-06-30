@@ -1,4 +1,0 @@
-HappyGoatBack(node)
- |-index.js
- |-write.html
- |-showLetter.html
