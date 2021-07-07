@@ -14,7 +14,12 @@ router.get('/', function (req, res, next) {
   // res.render('index', { title: 'Express' });
 });
 
-router.get('/writeLetter', function(req, res, next) {
+// レターのテキスト入力画面
+router.get('/new', function(req, res, next) {
+  res.render('new', { title: 'ハッピーゴート | 文章の入力' });
+});
+// レターのテキスト入力画面での送信処理
+router.post('/writeLetter', function(req, res, next) {
   res.render('writeLetter', { title: 'writeLetter' });
 });
 
