@@ -15,11 +15,11 @@
     </style>
 </head>
 <body>
-    <p>
-        文字を入力してください。
-    </p>
-    <textarea id = "user_input_text">a</textarea>
-    <li><a href="./showLetter">showLetter</a></li>
+    <p>文字を入力してください。</p>
+    <form action="/new" method="post">
+        <textarea type="text" name="sentence" placeholder="ここに送信したいテキストを入力ください"></textarea>
+        <button type="submit" name="button">送信する</button>
+    </form>
 
     <!-- イメージ -->
     <!-- ユーザが入力した文字をサーバに保存する用のボタンがある -->
