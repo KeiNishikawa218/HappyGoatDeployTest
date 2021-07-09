@@ -17,9 +17,11 @@
     </style>
 </head>
 <body>
-    <p>文字を入力してください。</p>
     <form action="/new" method="post">
-        <textarea type="text" name="sentence" placeholder="ここに送信したいテキストを入力ください"></textarea>
+        <p>タイトルを入力してください</p>
+        <input type="text" name="subject">
+        <p>文字を入力してください。</p>
+        <textarea type="text" name="body" placeholder="ここに送信したいテキストを入力ください"></textarea>
         <button type="submit" name="button">送信する</button>
     </form>
 
