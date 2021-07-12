@@ -11,7 +11,7 @@
     <div class="container">
       <% for(const letter of letters) { %>
         <div class="card">
-          <a href="#">
+          <a href="/letters/<%= letter.id %>">
             <div class="card__content">
               <p><%= letter.subject %></p>
               <p><%= letter.body %></p>
