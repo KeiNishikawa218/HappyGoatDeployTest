@@ -3,17 +3,22 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/components/card_design.css' />
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <% for(let i in content) { %>
-      <p>
-        <% let obj = content[i]; %>
-          <%= obj.id %>
-          <%= obj.subject %>
-          <%- obj.body %>
-      </p>
-    <% } %>
+    <div class="container">
+      <% for(const letter of letters) { %>
+        <div class="card">
+          <a href="/letters/<%= letter.id %>">
+            <div class="card__content">
+              <p><%= letter.subject %></p>
+              <p><%= letter.body %></p>
+            </div>
+          </a>
+        </div>
+      <% } %>
+    </div>
   </body>
 </html>

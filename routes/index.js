@@ -6,7 +6,7 @@ const connection = require('../lib/mysql_module.js');
 router.get('/', function (req, res, next) {
     connection.query('SELECT * FROM letters',(error, results) => {
       console.log(results);
-      res.render('index', { title: 'index',content: results });
+      res.render('index', { title: 'index',letters: results });
     }
   );
   // res.render('index', { title: 'Express' });

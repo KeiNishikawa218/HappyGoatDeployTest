@@ -1,0 +1,27 @@
+@use "../variables.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 16px;
+}
+
+.card {
+  position: relative;
+}
+
+.card__content {
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: variables.$box_shadow;
+  overflow: hidden;
+}
+
+.card__content p {
+  padding: 1em 0;
+}
+
+.card__content:hover {
+  /* background-color: #edd9ae; */
+  opacity: 0.5;
+}
