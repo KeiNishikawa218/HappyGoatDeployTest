@@ -1,3 +1,5 @@
+@use "./variables";
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,7 +7,5 @@ body {
 
 a {
   text-decoration: none;
-  color: #111111;
+  color: variables.$link_color;
 }
-
-/*# sourceMappingURL=style.css.map */
