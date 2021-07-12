@@ -11,12 +11,12 @@
     <div class="container">
       <% for(const letter of letters) { %>
         <div class="card">
-          <div class="card__content">
-            <a href="#">
+          <a href="#">
+            <div class="card__content">
               <p><%= letter.subject %></p>
               <p><%= letter.body %></p>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       <% } %>
     </div>
