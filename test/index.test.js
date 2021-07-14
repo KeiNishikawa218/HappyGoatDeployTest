@@ -1,13 +1,12 @@
 const request = require('supertest');
 const app = require('../app');
 
-// TODO:indexをテストする場合はプログラムが終わらない
-// SQLが原因だと思うので調べる
+// ConnectionPoolが発生するが、mochaにexit(--exit)オプションを付けると解消される
 describe("GET /", function () {   
     it("welcomes the user", function (done) {
         request(app)
-            .get("/")
-            .expect(200, done);
+        .get("/")
+        .expect(200, done);
     });
 });
 
@@ -18,3 +17,5 @@ describe("GET /new", function () {
             .expect(200, done);
     });
 });
+
+//SQLをテストするときは関数に切り出す？
