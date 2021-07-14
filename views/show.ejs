@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>showLetter</title>
+    <title><%= title %></title>
     <style type="text/css">
     textarea {
         background-image: url("/images/pink.jpg");
@@ -19,7 +19,14 @@
     <p>
         手紙が表示されます!
     </p>
-    <textarea readonly>a</textarea>
-    <li><a href="./writeLetter">writeLetter</a></li>
+    <div class="container">
+          <div class="card">
+              <div class="card__content">
+                <p><%= letter[0].subject %></p>
+                <textarea readonly><%= letter[0].body %></textarea>
+              </div>
+          </div>
+    </div>
+    <a href="/letters/new">新規投稿</a>
 </body>
 </html>
