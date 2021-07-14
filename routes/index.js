@@ -12,12 +12,10 @@ router.get('/', function (req, res, next) {
   // res.render('index', { title: 'Express' });
 });
 
-// レターのテキスト入力画面
+// 新規投稿
 router.get('/new', function(req, res, next) {
   res.render('new', { title: 'ハッピーゴート | 文章の入力' });
 });
-
-// レターのテキスト入力画面での送信処理
 router.post('/new', function(req, res, next) {
   // console.log(req.body.sentence);
   const subject = req.body.subject;
@@ -34,7 +32,9 @@ router.post('/new', function(req, res, next) {
   res.redirect("/");
 });
 
-router.get('/showLetter', function(req, res, next) {
+// 詳細画面
+router.get('/letters/:id', function(req, res, next) {
+  console.log(req.params.id);
   res.render('showLetter');
 });
 
