@@ -5,8 +5,8 @@ const app = require('../app');
 describe("GET /", function () {   
     it("welcomes the user", function (done) {
         request(app)
-        .get("/")
-        .expect(200, done);
+            .get("/")
+            .expect(200, done);
     });
 });
 
@@ -17,5 +17,7 @@ describe("GET /new", function () {
             .expect(200, done);
     });
 });
+
+
 
 //SQLをテストするときは関数に切り出す？
