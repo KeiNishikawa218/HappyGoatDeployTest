@@ -4,16 +4,11 @@ const connection = require('../lib/mysql_module.js');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  connection.sql_statment  ('SELECT * FROM letters')
-    .then(v => {
-      res.render('index', { title: 'index', letters: v['results'] }); 
+  connection.sql_statment('SELECT * FROM letters')
+    .then(letters => {
+      res.render('index', { title: 'index', letters: letters }); 
     }
   );
-  // connection.query('SELECT * FROM letters', (error, results) => {
-  //     console.log(result);
-  //     res.render('index', { title: 'index',letters: results });
-  //   }
-  // );
 });
 
 // 新規投稿
@@ -27,23 +22,20 @@ router.post('/letters/new', function(req, res, next) {
   const body = req.body.body;
   const post_data = { id: null, subject: subject, body: body };
 
-  // // const connection = mysql.createConnection(mysql_setting);
-
-  connection.query('INSERT INTO letters SET ?', post_data, function (results, fields) {
+  connection.connection.query('INSERT INTO letters SET ?', post_data, function (results, fields) {
       // if (error) throw error;
-      console.log(post_data + "を投稿したよ！");
+      console.log(post_data['subject'] + "を投稿したよ！");
       // console.log('ID:', results.insertId);
   });
+
   res.redirect("/");
 });
 
 // 詳細画面
-router.get('/letters/:id(\\d+)', function(req, res, next) {
-  connection.query('select * FROM letters where id = ?',req.params.id,(error, results) => {
+router.get('/letters/:id(\\d+)', function (req, res, next) {
+  connection.sql_statment('select * FROM letters where id = ' + req.params.id,(error, results) => {
     res.render('show', {title: results[0].subject,letter: results} );
-  }
-);
+  });
 });
-
 
 module.exports = router;
