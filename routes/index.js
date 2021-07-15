@@ -4,18 +4,23 @@ const connection = require('../lib/mysql_module.js');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    connection.query('SELECT * FROM letters',(error, results) => {
-      console.log(error);
-      res.render('index', { title: 'index',letters: results });
+  connection.sql_statment  ('SELECT * FROM letters')
+    .then(v => {
+      res.render('index', { title: 'index', letters: v['results'] }); 
     }
   );
-  // res.render('index', { title: 'Express' });
+  // connection.query('SELECT * FROM letters', (error, results) => {
+  //     console.log(result);
+  //     res.render('index', { title: 'index',letters: results });
+  //   }
+  // );
 });
 
 // 新規投稿
 router.get('/letters/new', function(req, res, next) {
   res.render('new', { title: 'ハッピーゴート | 文章の入力' });
 });
+
 router.post('/letters/new', function(req, res, next) {
   // console.log(req.body.sentence);
   const subject = req.body.subject;
