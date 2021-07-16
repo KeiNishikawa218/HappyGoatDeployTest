@@ -7,32 +7,32 @@ const expect = chai.expect;
 const connection = require('../lib/mysql_module.js');
 
 // ConnectionPoolが発生するが、mochaにexit(--exit)オプションを付けると解消される
-describe("GET /", function () {   
-    it("welcomes the user", function (done) {
+describe("GET /", () =>  {   
+    it("welcomes the user", done => {
         request(app)
             .get("/")
             .expect(200, done);
     });
 });
 
-describe("GET /letters/new", function () {
-    it("you can write a letter", function (done) {
+describe("GET /letters/new", () => {
+    it("you can write a letter", done =>  {
         request(app)
             .get("/letters/new")
             .expect(200, done);
     });
 });
 
-describe("GET /letters/1", function () {   
-    it("you can see a letter", function (done) {
+describe("GET /letters/1", () => {   
+    it("you can see a letter", done =>  {
         request(app)
             .get("/letters/1")
             .expect(200, done);
     });
 });
 
-describe("Establish SQL Connection", function () {
-    it("connect to SQL server", function (done) {
+describe("Establish SQL Connection", () => {
+    it("connect to SQL server", done =>  {
         connection.sql_statment('SELECT * FROM letters')
             .then(result => {
                 console.log(result[0]);
