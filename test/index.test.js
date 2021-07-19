@@ -35,10 +35,7 @@ describe("Establish SQL Connection", () => {
     it("connect to SQL server", done =>  {
         connection.sql_statment('SELECT * FROM letters')
             .then(result => {
-                console.log(result[0]);
                 expect(result[0]['id']).to.match(/\d+/);
             }).then(done, done);
     });
 });
-
-            
