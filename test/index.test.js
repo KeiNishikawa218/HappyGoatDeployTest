@@ -4,7 +4,7 @@ const app = require('../app');
 const chai = require('chai');
 const expect = chai.expect;
 
-const connection = require('../lib/mysql_module.js');
+const letters = require('../lib/letters.js');
 
 // ConnectionPoolが発生するが、mochaにexit(--exit)オプションを付けると解消される
 describe("GET /", () =>  {   
@@ -33,9 +33,9 @@ describe("GET /letters/1", () => {
 
 describe("Establish SQL Connection", () => {
     it("connect to SQL server", done =>  {
-        connection.sql_statment('SELECT * FROM letters')
-            .then(result => {
-                expect(result[0]['id']).to.match(/\d+/);
+        letters.findAll()
+            .then(results => {
+                expect(results[0]['id']).to.match(/\d+/);
             }).then(done, done);
     });
 });

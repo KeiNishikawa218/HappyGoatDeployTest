@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const sql_connection = require('../lib/mysql_module.js');
 const letters = require('../lib/letters.js');
 
 /* GET home page. */
@@ -20,7 +19,7 @@ router.get('/letters/new', function(req, res, next) {
 router.post('/letters/new', function(req, res, next) {
   const post_data = { id: null, subject: req.body.subject, body: req.body.body };
 
-  letters.newLetter(post_data).then(data => {
+  letters.createLetter(post_data).then(data => {
       res.redirect("/")
     }
   );
