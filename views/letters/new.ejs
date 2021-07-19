@@ -3,31 +3,18 @@
 <head>
     <link rel="stylesheet" href="/stylesheets/core.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <style type="text/css">
-    textarea {
-        background-image: url("/images/pink.jpg");
-        resize: none;
-        /* overflow: hidden; */
-        /* background-repeat: no-repeat; */
-        /* background-position: top center; */
-        font-size:24pt;
-        width: 400px;
-        height: 300px;
-    }
-    </style>
+    <link rel="stylesheet" href="/stylesheets/components/letter_design.css">
 </head>
 <body>
     <form action="/letters/new" method="post">
         <p>タイトルを入力してください</p>
         <input type="text" name="subject">
         <p>文字を入力してください。</p>
-        <textarea type="text" name="body" placeholder="ここに送信したいテキストを入力ください"></textarea>
+        <textarea class="letter_design" type="text" name="body" placeholder="ここに送信したいテキストを入力ください"></textarea>
         <button type="submit" name="button">送信する</button>
     </form>
 
     <!-- イメージ -->
-    <!-- ユーザが入力した文字をサーバに保存する用のボタンがある -->
-    <!-- シンプルに画像とテキストを合成したい -->
     <!-- ユーザが入力したテキストにIDを振る（連番）。画像を保存するblob or URL（テキスト） -->
 
     <!-- Todo: Node.js -->
