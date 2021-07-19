@@ -2,6 +2,9 @@
 <html>
 <head>
     <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/core.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/components/new_post.css">
     <style type="text/css">
     textarea {
         background-image: url("/images/pink.jpg");
@@ -22,11 +25,15 @@
     <div class="container">
           <div class="card">
               <div class="card__content">
-                <p><%= letter[0].subject %></p>
-                <textarea readonly><%= letter[0].body %></textarea>
+                <p><%= letter.subject %></p>
+                <textarea readonly><%= letter.body %></textarea>
               </div>
           </div>
     </div>
-    <a href="/letters/new">新規投稿</a>
+    <a href="/letters/new">
+        <div class = "new_post">
+            新規投稿
+        </div>
+    </a>
 </body>
 </html>
