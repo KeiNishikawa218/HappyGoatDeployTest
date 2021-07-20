@@ -21,12 +21,13 @@ router.get('/letters/new', function(req, res, next) {
 router.post('/letters/new', function(req, res, next) {
   const post_data = { id: null, subject: req.body.subject, body: req.body.body };
 
-  ogpGenerator.generate(
+  const image = ogpGenerator.generate(
     post_data.subject,
     post_data.body,
-    './public/images/result.jpg'
   );
-  
+
+  console.log(image);
+
   letters.createLetter(post_data).then(data => {
       res.redirect("/")
     }
