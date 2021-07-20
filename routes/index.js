@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const letters = require('../lib/letters.js');
+const ogpGenerator = require('../lib/ogpGenerator');
+
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -19,6 +21,12 @@ router.get('/letters/new', function(req, res, next) {
 router.post('/letters/new', function(req, res, next) {
   const post_data = { id: null, subject: req.body.subject, body: req.body.body };
 
+  ogpGenerator.generate(
+    post_data.subject,
+    post_data.body,
+    './public/images/result.jpg'
+  );
+  
   letters.createLetter(post_data).then(data => {
       res.redirect("/")
     }
