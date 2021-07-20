@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const letters = require('../lib/letters.js');
 const ogpGenerator = require('../lib/ogpGenerator');
+const uploadImageToS3 = require('../lib/uploadImageToS3');
 
 
 /* GET home page. */
@@ -23,10 +24,10 @@ router.post('/letters/new', function(req, res, next) {
 
   const image = ogpGenerator.generate(
     post_data.subject,
-    post_data.body,
+    post_data.body
   );
 
-  console.log(image);
+  uploadImageToS3.uploadFile(image);
 
   letters.createLetter(post_data).then(data => {
       res.redirect("/")
