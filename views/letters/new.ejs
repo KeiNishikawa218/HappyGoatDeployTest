@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
     <link rel="stylesheet" href="/stylesheets/core.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <style type="text/css">
@@ -15,15 +16,19 @@
         height: 300px;
     }
     </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 <body>
-    <form action="/letters/new" method="post">
-        <p>タイトルを入力してください</p>
-        <input type="text" name="subject">
-        <p>文字を入力してください。</p>
-        <textarea type="text" name="body" placeholder="ここに送信したいテキストを入力ください"></textarea>
-        <button type="submit" name="button">送信する</button>
-    </form>
+    <div class="container">
+        <form action="/letters/new" method="post">
+            <p>タイトルを入力してください</p>
+            <input type="text" name="subject">
+            <p>文字を入力してください。</p>
+            <textarea type="text" name="body" placeholder="ここに送信したいテキストを入力ください"></textarea>
+            <button type="submit" name="button">送信する</button>
+        </form>
+    </div>
+    
 
     <!-- イメージ -->
     <!-- ユーザが入力した文字をサーバに保存する用のボタンがある -->

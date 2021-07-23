@@ -2,6 +2,7 @@
 <html>
 <head>
     <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
     <link rel="stylesheet" href="/stylesheets/core.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/components/new_post.css">
@@ -17,20 +18,21 @@
         height: 300px;
     }
     </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 <body>
-    <p>あなたが書いたお手紙です🎉</p>
     <div class="container">
-          <div class="card">
-              <div class="card__content">
-                <img src="<%= letter.image %>" alt="">
-              </div>
-          </div>
+        <p>あなたが書いたお手紙です🎉</p>
+            <div class="card">
+                <div class="card__content">
+                    <img src="<%= letter.image %>" alt="">
+                </div>
+            </div>
+            <a href="/letters/new">
+                <div class = "new_post">
+                    新規投稿
+                </div>
+            </a>
     </div>
-    <a href="/letters/new">
-        <div class = "new_post">
-            新規投稿
-        </div>
-    </a>
 </body>
 </html>
