@@ -6,4 +6,4 @@ source /home/ec2-user/.nvm/nvm.sh
 cd /home/ec2-user/happygoat
 
 nvm use node
-yarn install
+sudo yarn install
