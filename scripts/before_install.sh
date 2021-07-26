@@ -4,9 +4,10 @@
 
 # Take off commentout when you deploy to new EC2 instance
 # Install node.js, yarn, nvm, forever
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-. ~/.nvm/nvm.sh
-nvm install node
+wget https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh
+sudo chmod +x install.sh
+./install.sh
+
 
 # Install forever module
 # https://www.npmjs.com/package/forever
