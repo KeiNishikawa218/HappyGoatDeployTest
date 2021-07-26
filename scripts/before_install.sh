@@ -1,15 +1,14 @@
 #!/bin/bash
 
-# Install node.js
-# sudo apt-get install python-software-properties -y
-# sudo apt-add-repository ppa:chris-lea/node.js -y
-# sudo apt-get update
-# sudo apt-get install nodejs -y
+# Before deploy, make sure EC2 has CodeDeploy Agent
 
-# Install nodemon
-# sudo npm install nodemon -g
+# Take off commentout when you deploy to new EC2 instance
+# Install node.js, yarn, nvm, forever
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+. ~/.nvm/nvm.sh
+nvm install node
 
-# Install forever module 
+# Install forever module
 # https://www.npmjs.com/package/forever
 # sudo npm install forever -g
 
