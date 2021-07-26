@@ -1,5 +1,5 @@
 #!/bin/bash
 cd /home/ec2-user/happygoat
 
-nvm use node
-yarn install
+sudo -i nvm use node
+sudo -i yarn install

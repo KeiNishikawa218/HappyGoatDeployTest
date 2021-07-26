@@ -7,8 +7,8 @@
 sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 source root/.nvm/nvm.sh
 nvm install node
-npm install -g yarn
-yarn add forever
+sudo -i npm install -g yarn
+sudo -i yarn add forever
 
 # Clean working folder
 # sudo find /home/ec2-user/happygoat -type f -delete
